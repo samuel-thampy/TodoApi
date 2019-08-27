@@ -1,7 +1,7 @@
 
 
-from .extensions import db
-from abc import BaseModel, MetaBaseModel
+from ..extensions import db
+from .abc import BaseModel, MetaBaseModel
 
 
 class Task(db.Model, BaseModel, metaclass=MetaBaseModel):
@@ -21,8 +21,8 @@ class TaskUser(db.Model, BaseModel, metaclass=MetaBaseModel):
 
     __tablename__ = "task_user"
 
-    task_id = db.Column(Integer, ForeignKey('task.id'))
-    user_id = db.Column(Integer, ForeignKey('user.id'))
+    task_id = db.Column(db.Integer, db.ForeignKey('task.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
 
 class TaskSchedule(db.Model, BaseModel, metaclass=MetaBaseModel):
@@ -31,7 +31,7 @@ class TaskSchedule(db.Model, BaseModel, metaclass=MetaBaseModel):
     __tablename__ = "task_schedule"
 
     scheduled_time = db.Column(db.DateTime)
-    task_id = db.Column(Integer, ForeignKey('task.id'))
+    task_id = db.Column(db.Integer, db.ForeignKey('task.id'))
 
 
     def __init__(self, scheduled_time):

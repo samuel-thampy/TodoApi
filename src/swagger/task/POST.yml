@@ -1,0 +1,15 @@
+Create an user based on the sent information
+---
+
+parameters:
+  - name: title
+    in: path
+    type: string
+    description: the title of the task
+
+responses:
+  200:
+    description: The task was successfully created
+    schema:
+      example:
+        title: "Clean Car"
