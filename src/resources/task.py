@@ -16,6 +16,14 @@ class TaskResource(Resource):
     """ Verbs relative to the task """
 
     @staticmethod
+    @swag_from("../swagger/task/GET.yml")
+    def get():
+        """ Return an user key information based on his name """
+        task = TaskRepository.get_all()
+        return jsonify({"data": task})
+
+
+    @staticmethod
     @parse_params(
         Argument("title", location="json", required=True, help="Create New Task")
     )

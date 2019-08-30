@@ -1,0 +1,10 @@
+Return an user key information based on his name
+---
+tags:
+  - task
+responses:
+  200:
+    description: The user's information were successfully retrieved
+    schema:
+      example:
+        title: Doe

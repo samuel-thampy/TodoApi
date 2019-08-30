@@ -12,6 +12,7 @@ class User(db.Model, BaseModel, metaclass=MetaBaseModel):
     last_name = db.Column(db.String(50))
     age = db.Column(db.Integer)
     gender = db.Column(db.String(10))
+    email_id = db.Column(db.String(50))
 
 
     def __init__(self, first_name, last_name, age, gender, email_id):
@@ -20,4 +21,4 @@ class User(db.Model, BaseModel, metaclass=MetaBaseModel):
         self.last_name = last_name
         self.age = age
         self.gender = gender
-        self.email_id = emaild_id
+        self.email_id = email_id

@@ -9,7 +9,6 @@ class UserRepository:
     @staticmethod
     def get(last_name, first_name):
         """ Query a user by last and first name """
-        print(User)
         return User.query.filter_by(last_name=last_name, first_name=first_name).one()
 
     def update(self, last_name, first_name, age):
@@ -20,8 +19,8 @@ class UserRepository:
         return user.save()
 
     @staticmethod
-    def create(last_name, first_name, age, gender):
+    def create(last_name, first_name, age, gender, email_id):
         """ Create a new user """
-        user = User(last_name=last_name, first_name=first_name, age=age, gender=gender)
+        user = User(last_name=last_name, first_name=first_name, age=age, gender=gender, email_id=email_id)
 
         return user.save()

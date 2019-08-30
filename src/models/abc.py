@@ -81,3 +81,7 @@ class BaseModel:
     def delete(self):
         db.session.delete(self)
         db.session.commit()
+
+    @classmethod
+    def all(self):
+        return [row.json for row in self.query.all()]

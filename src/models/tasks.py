@@ -16,6 +16,7 @@ class Task(db.Model, BaseModel, metaclass=MetaBaseModel):
         self.title = title
 
 
+
 class TaskUser(db.Model, BaseModel, metaclass=MetaBaseModel):
     """ The Task model """
 
