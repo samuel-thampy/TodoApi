@@ -19,7 +19,7 @@ class TaskResource(Resource):
     @swag_from("../swagger/task/GET.yml")
     def get():
         """ Return an user key information based on his name """
-        task = TaskRepository.get_all()
+        task = TaskRepository.get_all_by_user()
         return jsonify({"data": task})
 
 
